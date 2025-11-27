@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FitnessMealTracker.Core\FitnessMealTracker.Core.csproj" />
+    <ProjectReference Include="..\FitnessMealTracker.Data\FitnessMealTracker.Data.csproj" />
+    <ProjectReference Include="..\FitnessMealTracker.Business\FitnessMealTracker.Business.csproj" />
+  </ItemGroup>
+
+</Project>

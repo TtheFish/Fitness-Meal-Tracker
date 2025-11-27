@@ -1,0 +1,22 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (WPF)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/FitnessMealTracker/bin/Debug/net8.0-windows/FitnessMealTracker.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/FitnessMealTracker",
+      "console": "externalTerminal",
+      "stopAtEntry": false
+    },
+    {
+      "name": ".NET Core Attach",
+      "type": "coreclr",
+      "request": "attach"
+    }
+  ]
+}
+
