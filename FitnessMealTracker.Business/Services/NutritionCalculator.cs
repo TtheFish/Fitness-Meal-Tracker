@@ -3,17 +3,9 @@ using FitnessMealTracker.Core.Models;
 
 namespace FitnessMealTracker.Business.Services
 {
-    /// <summary>
-    /// Provides calculations for nutrition tracking and goal progress.
-    /// </summary>
     public class NutritionCalculator : INutritionCalculator
     {
-        /// <summary>
         /// Calculates the remaining calories needed to reach the daily goal.
-        /// </summary>
-        /// <param name="dailySummary">The current daily summary.</param>
-        /// <param name="userGoal">The user's daily goals.</param>
-        /// <returns>The remaining calories. Negative if over the goal.</returns>
         /// <exception cref="ArgumentNullException">Thrown when dailySummary or userGoal is null.</exception>
         public double CalculateRemainingCalories(DailySummary dailySummary, UserGoal userGoal)
         {
@@ -21,12 +13,7 @@ namespace FitnessMealTracker.Business.Services
             return userGoal.DailyCalorieGoal - dailySummary.TotalCalories;
         }
 
-        /// <summary>
         /// Calculates the remaining protein needed to reach the daily goal.
-        /// </summary>
-        /// <param name="dailySummary">The current daily summary.</param>
-        /// <param name="userGoal">The user's daily goals.</param>
-        /// <returns>The remaining protein in grams. Negative if over the goal.</returns>
         /// <exception cref="ArgumentNullException">Thrown when dailySummary or userGoal is null.</exception>
         public double CalculateRemainingProtein(DailySummary dailySummary, UserGoal userGoal)
         {
@@ -34,12 +21,7 @@ namespace FitnessMealTracker.Business.Services
             return userGoal.DailyProteinGoal - dailySummary.TotalProtein;
         }
 
-        /// <summary>
         /// Calculates the remaining carbohydrates needed to reach the daily goal.
-        /// </summary>
-        /// <param name="dailySummary">The current daily summary.</param>
-        /// <param name="userGoal">The user's daily goals.</param>
-        /// <returns>The remaining carbs in grams. Negative if over the goal.</returns>
         /// <exception cref="ArgumentNullException">Thrown when dailySummary or userGoal is null.</exception>
         public double CalculateRemainingCarbs(DailySummary dailySummary, UserGoal userGoal)
         {
@@ -47,12 +29,7 @@ namespace FitnessMealTracker.Business.Services
             return userGoal.DailyCarbGoal - dailySummary.TotalCarbs;
         }
 
-        /// <summary>
         /// Calculates the remaining fat needed to reach the daily goal.
-        /// </summary>
-        /// <param name="dailySummary">The current daily summary.</param>
-        /// <param name="userGoal">The user's daily goals.</param>
-        /// <returns>The remaining fat in grams. Negative if over the goal.</returns>
         /// <exception cref="ArgumentNullException">Thrown when dailySummary or userGoal is null.</exception>
         public double CalculateRemainingFat(DailySummary dailySummary, UserGoal userGoal)
         {

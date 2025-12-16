@@ -7,16 +7,10 @@ using FitnessMealTracker.ViewModels;
 
 namespace FitnessMealTracker
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private const string DefaultDataFilePath = "meals.json";
 
-        /// <summary>
-        /// Initializes a new instance of the MainWindow class.
-        /// </summary>
         public MainWindow()
         {
             try
@@ -41,10 +35,6 @@ namespace FitnessMealTracker
             }
         }
 
-        /// <summary>
-        /// Gets the file path for storing meal data.
-        /// </summary>
-        /// <returns>The path to the meals data file.</returns>
         private static string GetDataFilePath()
         {
             string appDataPath = Path.Combine(

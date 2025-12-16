@@ -7,17 +7,11 @@ using Newtonsoft.Json;
 
 namespace FitnessMealTracker.Data.Repositories
 {
-    /// <summary>
-    /// Provides JSON file-based persistence for meals.
-    /// </summary>
     public class JsonMealRepository : IMealRepository
     {
         private readonly string _filePath;
 
-        /// <summary>
         /// Initializes a new instance of the JsonMealRepository class.
-        /// </summary>
-        /// <param name="filePath">The path to the JSON file for storing meals.</param>
         /// <exception cref="ArgumentNullException">Thrown when filePath is null or empty.</exception>
         public JsonMealRepository(string filePath)
         {
@@ -28,10 +22,7 @@ namespace FitnessMealTracker.Data.Repositories
             _filePath = filePath;
         }
 
-        /// <summary>
         /// Loads all meals from the JSON file.
-        /// </summary>
-        /// <returns>A read-only list of meals. Returns an empty list if the file doesn't exist or is empty.</returns>
         /// <exception cref="IOException">Thrown when an I/O error occurs while reading the file.</exception>
         /// <exception cref="UnauthorizedAccessException">Thrown when access to the file is denied.</exception>
         public IReadOnlyList<Meal> LoadMeals()
@@ -59,10 +50,7 @@ namespace FitnessMealTracker.Data.Repositories
             }
         }
 
-        /// <summary>
         /// Saves the provided meals to the JSON file.
-        /// </summary>
-        /// <param name="meals">The list of meals to save.</param>
         /// <exception cref="ArgumentNullException">Thrown when meals is null.</exception>
         /// <exception cref="IOException">Thrown when an I/O error occurs while writing the file.</exception>
         /// <exception cref="UnauthorizedAccessException">Thrown when access to the file is denied.</exception>

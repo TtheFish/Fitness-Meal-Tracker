@@ -2,9 +2,6 @@
 
 namespace FitnessMealTracker.Core.Models
 {
-    /// <summary>
-    /// Represents user's daily nutritional goals.
-    /// </summary>
     public class UserGoal
     {
         private const double MinimumGoalValue = 0.0;
@@ -14,9 +11,6 @@ namespace FitnessMealTracker.Core.Models
         private double _dailyCarbGoal;
         private double _dailyFatGoal;
 
-        /// <summary>
-        /// Gets or sets the daily calorie goal.
-        /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when value is negative.</exception>
         public double DailyCalorieGoal
         {
@@ -31,9 +25,6 @@ namespace FitnessMealTracker.Core.Models
             }
         }
 
-        /// <summary>
-        /// Gets or sets the daily protein goal in grams.
-        /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when value is negative.</exception>
         public double DailyProteinGoal
         {
@@ -48,9 +39,6 @@ namespace FitnessMealTracker.Core.Models
             }
         }
 
-        /// <summary>
-        /// Gets or sets the daily carbohydrate goal in grams.
-        /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when value is negative.</exception>
         public double DailyCarbGoal
         {
@@ -65,9 +53,6 @@ namespace FitnessMealTracker.Core.Models
             }
         }
 
-        /// <summary>
-        /// Gets or sets the daily fat goal in grams.
-        /// </summary>
         /// <exception cref="ArgumentOutOfRangeException">Thrown when value is negative.</exception>
         public double DailyFatGoal
         {
