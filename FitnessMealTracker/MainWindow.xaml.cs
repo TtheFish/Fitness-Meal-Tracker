@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Windows;
 using FitnessMealTracker.Business.Services;
@@ -13,10 +13,10 @@ namespace FitnessMealTracker
 
         public MainWindow()
         {
+            InitializeComponent();
+            
             try
             {
-                InitializeComponent();
-                
                 string dataFilePath = GetDataFilePath();
                 IMealRepository mealRepository = new JsonMealRepository(dataFilePath);
                 IMealService mealService = new MealService(mealRepository);
@@ -31,7 +31,7 @@ namespace FitnessMealTracker
                     "Initialization Error",
                     MessageBoxButton.OK,
                     MessageBoxImage.Error);
-                throw;
+                // Don't throw - let the window show even with errors
             }
         }
 
@@ -47,6 +47,12 @@ namespace FitnessMealTracker
             }
             
             return Path.Combine(appDataPath, DefaultDataFilePath);
+        }
+
+        private void TextBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            // Event handler for text box changes
+            // This can be used for placeholder text or validation if needed
         }
     }
 }

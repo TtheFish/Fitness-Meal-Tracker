@@ -31,7 +31,7 @@ namespace FitnessMealTracker.Core.Models
                     _items.AddRange(value);
                 }
             }
-        }
+        }   
 
         public double TotalCalories => _items.Sum(item => item.Calories);
 

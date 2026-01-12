@@ -29,6 +29,22 @@ namespace FitnessMealTracker
                     MessageBoxImage.Error);
                 args.Handled = true;
             };
+            
+            // Ensure window is shown even if there are initialization issues
+            try
+            {
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Failed to start application: {ex.Message}\n\n{ex.StackTrace}",
+                    "Startup Error",
+                    MessageBoxButton.OK,
+                    MessageBoxImage.Error);
+                Shutdown();
+            }
         }
     }
 }

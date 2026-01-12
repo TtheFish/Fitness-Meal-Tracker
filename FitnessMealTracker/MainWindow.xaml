@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FitnessMealTracker"
         mc:Ignorable="d"
-        Title="Fitness Meal Tracker" Height="1070" Width="1429"
+        Title="Fitness Meal Tracker" 
+        MinHeight="600" MinWidth="900"
+        Height="800" Width="1200"
         WindowStartupLocation="CenterScreen"
-        Background="#F5F5F5">
+        Background="#F5F5F5" RenderTransformOrigin="0.5,0.5">
     <Window.Resources>
         <!-- Color Scheme -->
         <SolidColorBrush x:Key="PrimaryColor" Color="#4CAF50"/>
@@ -75,12 +77,13 @@
         </Style>
     </Window.Resources>
 
-    <Grid Margin="15" Background="{StaticResource BackgroundColor}">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="Auto"/>
-        </Grid.RowDefinitions>
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+        <Grid Margin="15" Background="{StaticResource BackgroundColor}" MinHeight="550">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
         <!-- Header -->
         <Border Grid.Row="0" 
@@ -361,12 +364,13 @@
             </Grid>
         </Grid>
 
-        <!-- Footer: Save/Load Buttons -->
-        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
-            <Button Content="📥 Load Meals" Command="{Binding LoadMealsCommand}" 
-                    Margin="5,0" Background="{StaticResource SecondaryColor}"/>
-            <Button Content="💾 Save Meals" Command="{Binding SaveMealsCommand}" 
-                    Margin="5,0" Background="{StaticResource PrimaryColor}" BorderBrush="White"/>
-        </StackPanel>
-    </Grid>
+            <!-- Footer: Save/Load Buttons -->
+            <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,15,0,0">
+                <Button Content="📥 Load Meals" Command="{Binding LoadMealsCommand}" 
+                        Margin="5,0" Background="{StaticResource SecondaryColor}"/>
+                <Button Content="💾 Save Meals" Command="{Binding SaveMealsCommand}" 
+                        Margin="5,0" Background="{StaticResource PrimaryColor}" BorderBrush="White"/>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
 </Window>
